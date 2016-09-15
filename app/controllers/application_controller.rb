@@ -2,6 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def angular
-    'layouts/application'
+   render 'layouts/application'
   end
 end
