@@ -22,3 +22,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'angular-rails-templates'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular-devise'
+end
