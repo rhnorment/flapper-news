@@ -7,8 +7,8 @@ angular.module('flapperNews', [
 .config [
   '$stateProvider'
   '$urlRouterProvider'
-  ($StateProvider, $UrlRouterProvider) ->
-    $StateProvider
+  ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
       .state('home',
         url: '/home'
         templateUrl: 'home/_home.html'
@@ -21,7 +21,7 @@ angular.module('flapperNews', [
       )
 
       .state('posts',
-        url: '/posts{id}'
+        url: '/posts/{id}'
         templateUrl: 'posts/_posts.html'
         controller: 'PostsCtrl'
         resolve: post: [
@@ -58,5 +58,5 @@ angular.module('flapperNews', [
         ]
       )
 
-    $UrlRouterProvider.otherwise 'home'
+    $urlRouterProvider.otherwise 'home'
 ]
