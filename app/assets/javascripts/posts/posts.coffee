@@ -10,7 +10,7 @@ angular.module('flapperNews')
         angular.copy data, o.posts
 
     o.get = (id) ->
-      $http.get('/posts' + id + '.json').then (res) ->
+      $http.get('/posts/' + id + '.json').then (res) ->
         res.data
 
     o.create = (post) ->
@@ -25,6 +25,8 @@ angular.module('flapperNews')
       $http.post '/posts/' + id + '/comments.json', comment
 
     o.upvoteComment = (post, comment) ->
-      $http.put('/posts/' + post.id + '/connents/' + comment.id + '/upvote.json').success (data) ->
+      $http.put('/posts/' + post.id + '/comments/' + comment.id + '/upvote.json').success (data) ->
         comment.upvotes += 1
+
+    o
 ]
